@@ -141,19 +141,22 @@ Unified error responses with:
 - Storage limit errors
 - Unauthorized / forbidden access
 
+---
+
 ## 📁 Folder Structure
 
 src/
 └── main/
     ├── java/com/securoserv/
-    │     ├── controller/        # Handles API requests (auth, files, payments, storage)
-    │     ├── service/           # Business logic (encryption, decryption, storage, payments)
-    │     ├── repository/        # JPA repositories for users & file metadata
-    │     ├── entity/            # Database models (User, FileMetadata, etc.)
-    │     ├── security/          # JWT auth, filters, role-based access
-    │     └── exception/         # Global exception handling
+    │   ├── controller/        # Handles API requests (auth, files, payments, storage)
+    │   ├── service/           # Business logic (encryption, decryption, storage, payments)
+    │   ├── repository/        # JPA repositories for users & file metadata
+    │   ├── entity/            # Database models (User, FileMetadata, etc.)
+    │   ├── security/          # JWT auth, filters, role-based access
+    │   └── exception/         # Global exception handling
     │
     └── resources/
         ├── application.properties
         └── static/            # (Optional) static files if any
+
   
