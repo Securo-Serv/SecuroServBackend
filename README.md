@@ -93,7 +93,7 @@ mvn spring-boot:run
 
 
 ### 🔐 Auth APIs
-- **POST `/auth/register`** — Register a new user
+- **POST `/auth/createuser`** — Register a new user
 - **POST `/auth/login`** — Authenticate user and return JWT token
 
 ---
