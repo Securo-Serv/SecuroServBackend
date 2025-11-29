@@ -33,33 +33,33 @@ It provides encrypted file handling, strict authentication, and role-based acces
 
 ## 🧩 Project Architecture
 
-### **1. Controller Layer**
-Handles API requests for authentication and file operations.
+ ### **1. Controller Layer**
+ Handles API requests for authentication and file operations.
 
-### **2. Service Layer**
-Responsible for:
-- File Encryption logic
-- File storage logic  
-- Access validation  
-- JWT verification  
-- Metadata handling  
+ ### **2. Service Layer**
+ Responsible for:
+ - File Encryption logic
+ - File storage logic  
+ - Access validation  
+ - JWT verification  
+ - Metadata handling  
 
-### **3. Repository Layer**
-Database operations for:
-- Users  
-- File metadata  
+ ### **3. Repository Layer**
+ Database operations for:
+ - Users  
+ - File metadata  
 
-### **4. Entity Layer**
-Defines structured database models.
+ ### **4. Entity Layer**
+ Defines structured database models.
 
-### **5. Security Layer**
-Implements:
-- JWT token generation & validation  
-- Authentication filters  
-- Route protection  
+ ### **5. Security Layer**
+ Implements:
+ - JWT token generation & validation  
+ - Authentication filters  
+ - Route protection  
 
-### **6. Exception Handling**
-Provides global exception handling for all API endpoints.
+ ### **6. Exception Handling**
+ Provides global exception handling for all API endpoints.
 
 ---
 
