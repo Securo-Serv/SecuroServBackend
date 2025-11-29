@@ -145,6 +145,7 @@ Unified error responses with:
 
 ## 📁 Folder Structure
 
+```
 src/
 └── main/
     ├── java/com/securoserv/
@@ -158,5 +159,6 @@ src/
     └── resources/
         ├── application.properties
         └── static/            # (Optional) static files if any
+```
 
   
