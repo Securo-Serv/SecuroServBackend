@@ -11,10 +11,11 @@ It provides encrypted file handling, strict authentication, and role-based acces
 - **Protected File Retrieval:** Only authorized users can download files.
 - **Encrypted Storage:** Files are stored with hashed/obfuscated filenames.
 - **JWT Authentication:** Secure login and authorization for all routes.
-- **Role-Based Access Control:** Access rules based on user roles.
+- **Role-Based Storage Control:** Strorage rules based on user or premium roles.
 - **Structured Security Workflow:** Authentication → Authorization → Validation → Access.
+- **Razorpay Payment Integration:** Supports secure payments for premium storage or file operations.
 - **Layered Architecture:** Controller → Service → Repository → Entity → Security.
-- **Exception Handling:** Clean error responses for invalid and unauthorized actions.
+- **Exception Handling:** Clean error responses for invalid and unauthorized actions.-
 
 ---
 
@@ -24,7 +25,7 @@ It provides encrypted file handling, strict authentication, and role-based acces
 - **Spring Boot**
 - **Spring Security (JWT)**
 - **Spring Data JPA**
-- **MySQL**
+- **PostgreSQL**
 - **Hibernate**
 - **Maven**
 
@@ -37,6 +38,7 @@ Handles API requests for authentication and file operations.
 
 ### **2. Service Layer**
 Responsible for:
+- File Encryption logic
 - File storage logic  
 - Access validation  
 - JWT verification  
@@ -68,11 +70,24 @@ Provides global exception handling for all API endpoints.
 3. System stores file securely  
 4. Metadata saved in DB  
 5. Authorized users can request file download  
-6. JWT + RBAC validates access  
+6. JWT validates access  
 
 ---
 
 ## 🏁 Getting Started (Setup Instructions)
 
-### **1. Clone the Repository**
+## 1. Clone the repository
+git clone https://github.com/your-username/your-repo.git
+cd your-repo
+
+## 2. Configure MySQL
+spring.datasource.url=jdbc:mysql://localhost:3306/dailydone
+spring.datasource.username=root
+spring.datasource.password=1234
+
+## 3. Install dependencies
+mvn clean install
+
+## 4. Run application
+mvn spring-boot:run
 
