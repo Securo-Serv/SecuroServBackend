@@ -81,8 +81,8 @@ git clone https://github.com/your-username/your-repo.git
 cd your-repo
 
 ## 2. Configure MySQL
-spring.datasource.url=jdbc:mysql://localhost:3306/dailydone
-spring.datasource.username=root
+spring.datasource.url=jdbc:postgresql://localhost:5432/yourdbname
+spring.datasource.username=postgres
 spring.datasource.password=1234
 
 ## 3. Install dependencies
@@ -91,3 +91,52 @@ mvn clean install
 ## 4. Run application
 mvn spring-boot:run
 
+
+### 🔐 Auth APIs
+- **POST `/auth/register`** — Register a new user
+- **POST `/auth/login`** — Authenticate user and return JWT token
+
+---
+
+### 📁 File APIs
+- **POST `/files/upload`**  
+  Upload a file securely.  
+  - Validates file type & size  
+  - Encrypts the file  
+  - Stores encrypted file  
+  - Saves metadata in DB  
+
+- **GET `/files/{id}`**  
+  Download a file.  
+  - Fetches encrypted file  
+  - Decrypts it before sending  
+  - Only accessible to authorized users  
+
+- **DELETE `/files/{id}`**  
+  Delete a file (role/access based)
+
+---
+
+### 🔐 Encryption Flow (Internal)
+> No separate API — encryption & decryption happen automatically in upload/download services.
+
+---
+
+### 🗂 Storage Management APIs
+- **GET `/storage/usage/{userId}`** — Returns how much storage the user has used  
+- **GET `/storage/limit/{userId}`** — Returns the user's storage limit (if implemented)
+
+---
+
+### 💳 Payment APIs (Razorpay)
+- **POST `/payments/create-order`** — Create Razorpay order for premium storage or file operations  
+- **POST `/payments/verify`** — Verify Razorpay payment signature  
+
+---
+
+### ⚠️ Error Handling
+Unified error responses with:
+- Proper HTTP status codes
+- Validation errors
+- Storage limit errors
+- Unauthorized / forbidden access
