@@ -21,7 +21,7 @@ It provides encrypted file handling, strict authentication, and role-based Stora
 
 ## 🛠 Tech Stack
 
-- **Java 17**
+- **Java**
 - **Spring Boot**
 - **Spring Security (JWT)**
 - **Spring Data JPA**
