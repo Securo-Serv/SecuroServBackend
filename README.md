@@ -149,16 +149,20 @@ Unified error responses with:
 src/
 └── main/
     ├── java/com/securoserv/
-    │   ├── controller/        # Handles API requests (auth, files, payments, storage)
-    │   ├── service/           # Business logic (encryption, decryption, storage, payments)
-    │   ├── repository/        # JPA repositories for users & file metadata
-    │   ├── entity/            # Database models (User, FileMetadata, etc.)
-    │   ├── security/          # JWT auth, filters, role-based access
-    │   └── exception/         # Global exception handling
+    │   ├── Configuration/         # App configuration (CORS, Beans, etc.)
+    │   ├── Controller/            # Handles API requests (auth, files, payments, storage)
+    │   ├── DTO/                   # Request & response DTOs
+    │   ├── Entity/                # Database models (User, FileMetadata, etc.)
+    │   ├── ExceptionHandling/     # Global exception handling
+    │   ├── External/              # External integrations (Razorpay, etc.)
+    │   ├── Mapper/                # Entity <-> DTO mappers
+    │   ├── Repository/            # Spring Data JPA repositories
+    │   ├── Security/              # JWT auth, filters, role-based access
+    │   └── Service/               # Business logic (encryption, storage, payments)
     │
     └── resources/
         ├── application.properties
-        └── static/            # (Optional) static files if any
+        └── static/                # (Optional) static assets
 ```
 
   
